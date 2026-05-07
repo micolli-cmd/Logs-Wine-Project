@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGS Wine - Home</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body data-home-url="{% url 'home' %}">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/logs logo.png' %}" alt="LOGS Wine Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'about' %}">ABOUT</a></li>
+            <li><a href="{% url 'wines' %}">WINES</a></li>
+            <li><a href="{% url 'events' %}">EVENTS</a></li>
+            <li><a href="#">RECIPE</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="shop-btn">SHOP</a>
+            <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+        </div>
+    </nav>
+    <section class="video-section">
+        <video autoplay loop muted playsinline>
+            <source src="{% static 'videos/logs vid.mov' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <div class="icon-placeholder">
+                <img src="{% static 'images/logs logo page.jpg' %}" alt="LOGS Wine Icon">
+            </div>
+            <h2 class="video-tagline">Crafted with Passion, Savored with Elegance</h2>
+            <div class="video-buttons">
+                <a href="{% url 'about' %}" class="video-btn">ABOUT OUR WINES</a>
+                <a href="{% url 'wines' %}" class="video-btn">SHOP OUR WINES</a>
+            </div>
+        </div>
+    </section>
+    <section class="taste-section">
+        <div class="taste-image">
+            <img src="{% static 'images/wine man.jpg' %}" alt="Man Drinking Wine">
+        </div>
+        <div class="taste-content">
+            <h2>ENJOY LOGS UNIQUE TASTE</h2>
+            <p>Indulge in the unmistakable character of LOGS Wine, where every sip tells a story of sun-drenched vineyards,
+                meticulous craftsmanship, and pure passion. From the lusciously smooth Sweet Red bursting with vibrant fruit notes,
+                to the crisp and exotic Rosé Nectar, and the elegantly
+                structured Merlot that lingers with timeless depth, each bottle is crafted to awaken your senses and elevate any moment.</p>
+            <p>Whether you’re sharing laughter with friends, unwinding after a long day, or celebrating life’s special occasions,
+                LOGS delivers a taste that’s refreshingly bold yet effortlessly refined.
+                Discover the unique harmony of flavor that only LOGS can offer—because true enjoyment begins with a glass poured from the heart.</p>
+        </div>
+    </section>
+    <header class="hero-section" style="background-image: url('{% static 'images/hero_wine.jpg' %}');">
+        <div class="hero-content">
+            <h1 class="fade-in">Discover the Art of LOGS Wine</h1>
+            <p class="fade-in">Crafted with Passion, Savored with Elegance</p>
+            <a href="#wines" class="hero-cta fade-in">Shop Our Collection</a>
+        </div>
+    </header>
+    <section class="wines-section" id="wines">
+        <h2>Our Featured Wines</h2>
+    </section>
+    <section class="sweet-red-section">
+        <div class="sweet-red-images">
+            <img src="{% static 'images/Logs SweetRed.png' %}" alt="Wine Bottle 1" class="wine-bottle">
+            <img src="{% static 'images/Logs SweetRed.png' %}" alt="Wine Bottle 2" class="wine-bottle">
+            <img src="{% static 'images/Logs SweetRed.png' %}" alt="Wine Bottle 3" class="wine-bottle">
+        </div>
+        <div class="sweet-red-content">
+
+            <h2>SWEET RED</h2>
+            <ul>
+                <li>Lusciously Smooth</li>
+                <li>Irresistibly Rich</li>
+                <li>Fruity Flavors</li>
+            </ul>
+            <p>Crafted from sun-ripened grapes, this wine offers a perfect balance of natural sweetness and vibrant character.</p>
+            <p>LOGS Sweet Red Wine envelops the palate in layers of ripe black cherry, succulent plum, and a whisper of warm cocoa and gentle spice</p>
+            <a href="https://wa.me/2349065449097?text=Hi%20LOGS%20Wine!%20I%20want%20to%20order%20Sweet%20Red."
+   class="order-now-btn btn btn-primary" target="_blank" rel="noopener noreferrer">
+    Order Sweet Red on WhatsApp
+</a>
+        </div>
+    </section>
+    <section class="rose-nectar-section">
+        <div class="rose-nectar-content">
+            <h2>Rose Nectar</h2>
+            <ul>
+                <li>Exquisite</li>
+                <li>Exotic grapes</li>
+                <li>Fruity taste</li>
+                <li>Satisfying</li>
+            </ul>
+            <p>This exquisite rosé is made from hand-selected grapes, gently pressed to extract the perfect balance of fruitiness and crisp acidity.</p>
+            <p>LOGS Rosé Nectar unveils an enchanting bouquet of fresh strawberries, ripe watermelon, and hints of tropical guava kissed by gentle floral notes</p>
+            <a href="https://wa.me/2349065449097?text=Hi%20LOGS%20Wine!%20I%20want%20to%20order%20Rosé%20Nectar."
+   class="order-now-btn btn btn-primary" target="_blank" rel="noopener noreferrer">
+    Order Rosé Nectar on WhatsApp
+</a>
+        </div>
+        <div class="rose-nectar-images">
+            <img src="{% static 'images/Logs RoseNectar.png' %}" alt="Rose Bottle 1" class="wine-bottle">
+            <img src="{% static 'images/Logs RoseNectar.png' %}" alt="Rose Bottle 2" class="wine-bottle">
+            <img src="{% static 'images/Logs RoseNectar.png' %}" alt="Rose Bottle 3" class="wine-bottle">
+        </div>
+    </section>
+    <section class="merlot-section">
+        <div class="merlot-images">
+            <img src="{% static 'images/Logs Merlot.png' %}" alt="Merlot Bottle 1" class="wine-bottle">
+            <img src="{% static 'images/Logs Merlot.png' %}" alt="Merlot Bottle 2" class="wine-bottle">
+            <img src="{% static 'images/Logs Merlot.png' %}" alt="Merlot Bottle 3" class="wine-bottle">
+        </div>
+        <div class="merlot-content">
+            <h2>MERLOT</h2>
+            <p>Smooth yet structured, this Merlot embodies warmth, depth, and refinement—designed for those who appreciate a timeless classic.</p>
+            <p>LOGS Merlot unfolds an alluring aroma of dark cherries, ripe plums, and subtle whispers of vanilla and warm spice from gentle oak influence.</p>
+            <a href="https://wa.me/2349065449097?text=Hi%20LOGS%20Wine!%20I%20want%20to%20order%20Merlot."
+   class="order-now-btn btn btn-primary" target="_blank" rel="noopener noreferrer">
+    Order Merlot on WhatsApp
+</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 LOGS Wine. All rights reserved.</p>
+            <div class="social-links">
+                <p>Follow us on:</p>
+                <ul>
+                    <li><a href="https://x.com/LOGSWine" target="_blank" aria-label="Follow us on X"><i class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://facebook.com/LOGSWine" target="_blank" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://youtube.com/@LOGSWine" target="_blank" aria-label="Follow us on YouTube"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com/logs_wineofficial/" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/theme.js' %}"></script>
+<!-- Back to Top Button -->
+<button id="back-to-top" class="btn btn-primary rounded-circle shadow" title="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+<a href="https://wa.me/2347065162178?text=Hello%20LOGS%20Wine%20Team%2C%20I'm%20interested%20in..."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+<!-- Back to Top JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.visibility = 'visible';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.visibility = 'hidden';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+</html>

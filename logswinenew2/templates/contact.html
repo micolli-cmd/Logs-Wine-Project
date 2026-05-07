@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGS Wine - Contact</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body data-home-url="{% url 'home' %}">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+            <img src="{% static 'images/logs logo.png' %}" alt="LOGS Wine Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'about' %}">ABOUT</a></li>
+            <li><a href="#">WINES</a></li>
+            <li><a href="{% url 'events' %}">EVENTS</a></li>
+            <li><a href="#">RECIPE</a></li>
+            <li><a href="#" class="active">CONTACT</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="shop-btn">SHOP</a>
+            <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+        </div>
+    </nav>
+    <section class="about-hero" style="background-image: url('{% static 'images/cellar.jpg' %}'); height: 600px;">
+        <div class="hero-overlay">
+            <div class="icon-placeholder">
+                <img src="{% static 'images/logs logo page.jpg' %}" alt="LOGS Wine Icon">
+            </div>
+            <h1 class="hero-title">CONTACT US</h1>
+            <p class="hero-subtitle">GET IN TOUCH</p>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Reach Out to Us</h2>
+                <p>We're passionate about creating exceptional wines and sharing our story with you. Whether you have questions about our collection, want to plan a visit, or simply want to share your thoughts, our team is here to help. Let's connect over a glass of wine.</p>
+            </div>
+        </div>
+    </section>
+        <section class="contact-form-section">
+        <div class="contact-container">
+            <div class="contact-left" style="background-image: url('{% static 'images/logs black.jpg' %}');"></div>
+            <div class="contact-right">
+                <div class="contact-text-box">
+                    <h2>Contact Form</h2>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="form-message {{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject of your message" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-info-section">
+        <div class="info-container" style="background-image: url('{% static 'images/wine8.jpg' %}');">
+            <div class="info-text-box">
+                <h2>Our Contact Information</h2>
+                <h3>Major Distributor 👇 </h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> No.73 Oko Ogba Airport Road, Benin City Edo State</li>
+                    <li><i class="fas fa-phone"></i> +234 9065449097</li>
+                    <li><i class="fas fa-envelope"></i> logswine.ng@gmail.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9am-9pm | Sat: 10am-10pm</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <button id="scroll-top-btn" class="scroll-top-btn" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 LOGS Wine. All rights reserved.</p>
+            <div class="social-links">
+                <p>Follow us on:</p>
+                <ul>
+                    <li><a href="https://x.com/LOGSWine" target="_blank" aria-label="Follow us on X"><i class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://facebook.com/LOGSWine" target="_blank" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://youtube.com/@LOGSWine" target="_blank" aria-label="Follow us on YouTube"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://instagram.com/LOGSWine" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/theme.js' %}"></script>
+    <a href="https://wa.me/2347065162178?text=Hello%20LOGS%20Wine%20Team%2C%20I'm%20interested%20in..."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+    <script>
+        // Scroll to top button functionality
+        const scrollTopBtn = document.getElementById('scroll-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGS Wine - About</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body data-home-url="{% url 'home' %}">
+    <nav class="navbar">
+        <div class="logo">
+            <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'images/logs logo.png' %}" alt="LOGS Wine Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'about' %}" class="active">ABOUT</a></li>
+            <li><a href="{% url 'wines' %}">WINES</a></li>
+            <li><a href="{% url 'events' %}">EVENTS</a></li>
+            <li><a href="#">RECIPE</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="shop-btn">SHOP</a>
+            <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+        </div>
+    </nav>
+    <section class="about-hero" style="background-image: url('{% static 'images/wine9.jpg' %}'); height: 600px;">
+        <div class="hero-overlay">
+            <div class="icon-placeholder">
+                <img src="{% static 'images/logs logo page.jpg' %}" alt="LOGS Wine Icon">
+            </div>
+            <h1 class="hero-title">OUR STORY</h1>
+            <p class="hero-subtitle">A LEGACY IN THE MAKING</p>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our History</h2>
+                <p>Rooted in strong family values, LOGS Wine is more than a business; it is a legacy in the making, built with dedication, passion, and a commitment to excellence.</p>
+                <p>Born from the shared vision of four siblings—Lavida, Olivia, Godswill, and Splendor—LOGS Wine carries the very essence of their initials and unbreakable family bond,
+                    a heartfelt tribute to unity, ambition, and African pride. Founded in South Africa’s vibrant Western Cape and nurtured through Logs Investment since 2016, this brand transforms the continent’s rich terroir into accessible, soulful wines that bridge heritage and modern enjoyment.</p>
+            </div>
+        </div>
+    </section>
+    <section class="history-box">
+        <div class="box-container">
+            <div class="box-left" style="background-image: url('{% static 'images/wineH.jpg' %}');"></div>
+            <div class="box-right">
+                <div class="box-text">
+
+                    <p>Their father, John Eriourolo, a visionary entrepreneur, ignited his passion for business through his deep appreciation for farming—transforming a seed into a bountiful harvest. With this inspiration, he dedicated himself to producing high-quality wines sourced from sustainable vineyards in South Cape, Western Cape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="vision-section">
+        <div class="vision-container" style="background-image: url('{% static 'images/redwine.jpg' %}');">
+            <div class="vision-text-box">
+                <h2>OUR VALUES</h2>
+                <ul>
+                    <li>Sustainability: Committed to eco-friendly practices.</li>
+                    <li>Quality: Only the finest ingredients and methods.</li>
+                    <li>Passion: Driven by love for winemaking.</li>
+                    <li>Innovation: Blending tradition with modern techniques.</li>
+                </ul>
+                <p>We believe in creating wines that not only taste exceptional but also tell a story of dedication and craftsmanship.</p>
+            </div>
+        </div>
+    </section>
+    <section class="mission-section">
+        <div class="mission-container">
+            <div class="mission-left" style="background-image: url('{% static 'images/logs black.jpg' %}');">
+                <img src="{% static 'images/three wines.png' %}" alt="Mission Foreground Image">
+            </div>
+            <div class="mission-right">
+                <div class="mission-text-box">
+                    <h2>OUR VISION</h2>
+                    <p>At LOGS Wine, our mission is to offer affordable luxury to wine lovers while introducing new enthusiasts to the distinctive taste of our wines. We strive to establish LOGS Wine as a household name—a brand that captivates hearts, minds, and palates. Beyond crafting exceptional wines, we are committed to fostering sustainable employment opportunities and nurturing international partnerships that extend beyond Africa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <button id="scroll-top-btn" class="scroll-top-btn" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 LOGS Wine. All rights reserved.</p>
+            <div class="social-links">
+                <p>Follow us on:</p>
+                <ul>
+                    <li><a href="https://x.com/LOGSWine" target="_blank" aria-label="Follow us on X"><i class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://facebook.com/LOGSWine" target="_blank" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://youtube.com/@LOGSWine" target="_blank" aria-label="Follow us on YouTube"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://instagram.com/LOGSWine" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/theme.js' %}"></script>
+    <script>
+        // Scroll to top button functionality
+        const scrollTopBtn = document.getElementById('scroll-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

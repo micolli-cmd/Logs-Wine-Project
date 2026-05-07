@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGS Wine - Our Wines</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body data-home-url="{% url 'home' %}">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-wine">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logs logo.png' %}" alt="LOGS Wine Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="nav-links">
+            <li><a href="{% url 'about' %}">ABOUT</a></li>
+            <li><a href="{% url 'wines' %}">WINES</a></li>
+            <li><a href="{% url 'events' %}">EVENTS</a></li>
+            <li><a href="#">RECIPE</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT</a></li>
+        </ul>
+                <div class="nav-actions d-flex align-items-center">
+                    <a href="#" class="shop-btn btn btn-primary me-3">SHOP</a>
+                    <a href="#" class="cart-icon btn btn-outline-light me-3"><i class="fas fa-shopping-cart"></i></a>
+                    <button id="theme-toggle" class="theme-toggle-btn btn btn-outline-light">Toggle Theme</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="wines-hero text-center text-white py-5" style="background: linear-gradient(rgba(74, 14, 14, 0.75), rgba(44, 8, 8, 0.85)), url('{% static 'images/wine-bottles-shelf.jpg' %}'); background-size: cover; background-position: center; min-height: 60vh; display: flex; align-items: center;">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Our Wines</h1>
+            <p class="lead fs-4">Three expressions of passion, crafted for every moment</p>
+        </div>
+    </section>
+    <div class="alert alert-info border-0 text-center py-3 mb-4" role="alert">
+    <i class="fab fa-whatsapp fa-2x text-success me-2"></i>
+    <strong>Ordering is simple!</strong> Click any button to chat with us on WhatsApp.<br>
+    We'll reply quickly with prices, payment details, and delivery options (Benin, Lagos & Nationwide).
+</div>
+
+    <!-- Wines Grid -->
+    <section class="wines-grid py-5 bg-light">
+        <div class="container">
+            <div class="row g-5 justify-content-center">
+
+                <!-- Sweet Red -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wine-card position-relative overflow-hidden rounded-3 shadow-lg h-100">
+                        <img src="{% static 'images/Sweet Red.png' %}" alt="Sweet Red Bottle" class="img-fluid w-100">
+                        <div class="wine-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4 text-white">
+                            <h2 class="fw-bold mb-2">Sweet Red</h2>
+                            <p class="mb-3">Lusciously smooth with irresistible richness and vibrant fruity notes</p>
+                            <div class="wine-details mb-4 opacity-0 translateY-20 transition">
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check-circle me-2"></i> Sun-ripened grapes</li>
+                                    <li><i class="fas fa-check-circle me-2"></i> Perfect balance of sweetness</li>
+                                    <li><i class="fas fa-check-circle me-2"></i> Pairs beautifully with spicy dishes & desserts</li>
+                                </ul>
+                            </div>
+                            <a href="https://wa.me/2349065449097?text=Hi%20LOGS%20Wine!%20I%20want%20to%20order%20Sweet%20Red."
+   class="btn btn-primary btn-lg w-100" target="_blank" rel="noopener noreferrer">
+    Order Sweet Red on WhatsApp
+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rosé Nectar -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wine-card position-relative overflow-hidden rounded-3 shadow-lg h-100">
+                        <img src="{% static 'images/Logs RoseNectar.png' %}" alt="Rosé Nectar Bottle" class="img-fluid w-100">
+                        <div class="wine-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4 text-white">
+                            <h2 class="fw-bold mb-2">Rosé Nectar</h2>
+                            <p class="mb-3">Exquisite, fruity, and refreshingly crisp</p>
+                            <div class="wine-details mb-4 opacity-0 translateY-20 transition">
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check-circle me-2"></i> Hand-selected exotic grapes</li>
+                                    <li><i class="fas fa-check-circle me-2"></i> Gentle pressing for perfect fruitiness</li>
+                                    <li><i class="fas fa-check-circle me-2"></i> Ideal with seafood, salads & summer days</li>
+                                </ul>
+                            </div>
+                            <a href="https://wa.me/2349065449097?text=Hi%20LOGS%20Wine!%20I%20want%20to%20order%20Rosé%20Nectar."
+   class="btn btn-primary btn-lg w-100" target="_blank" rel="noopener noreferrer">
+    Order Rosé Nectar on WhatsApp
+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Merlot -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wine-card position-relative overflow-hidden rounded-3 shadow-lg h-100">
+                        <img src="{% static 'images/Logs Merlot.png' %}" alt="Merlot Bottle" class="img-fluid w-100">
+                        <div class="wine-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4 text-white">
+                            <h2 class="fw-bold mb-2">Merlot</h2>
+                            <p class="mb-3">Smooth, structured, and timelessly refined</p>
+                            <div class="wine-details mb-4 opacity-0 translateY-20 transition">
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check-circle me-2"></i> Warm depth and elegant tannins</li>
+                                    <li><i class="fas fa-check-circle me-2"></i> Velvety finish</li>
+                                    <li><i class="fas fa-check-circle me-2"></i> Perfect with grilled meats & aged cheeses</li>
+                                </ul>
+                            </div>
+                            <a href="https://wa.me/2349065449097?text=Hi%20LOGS%20Wine!%20I%20want%20to%20order%20Merlot."
+   class="btn btn-primary btn-lg w-100" target="_blank" rel="noopener noreferrer">
+    Order Merlot on WhatsApp
+</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<!-- WhatsApp Ordering Notice Banner -->
+<section class="whatsapp-notice py-3 text-center text-white" style="background: linear-gradient(90deg, #4a0e0e, #6b1c1c);">
+    <div class="container">
+        <p class="mb-0 fs-5 fw-medium">
+            <i class="fab fa-whatsapp me-2 fs-4"></i>
+            All LOGS Wine purchases are currently handled via WhatsApp for the fastest service.
+            <strong>Chat with us now</strong> to order Sweet Red, Rosé Nectar or Merlot!
+            <br class="d-block d-md-none">
+            <span class="ms-md-3">→ Full online store & other payment options coming very soon!</span>
+        </p>
+        <a href="https://wa.me/2349065449097?text=Hello%20LOGS%20Wine!%20I'd%20like%20to%20place%20an%20order."
+           class="btn btn-outline-light btn-sm mt-2 px-4" target="_blank" rel="noopener noreferrer">
+            Message us on WhatsApp →
+        </a>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 LOGS Wine. All rights reserved.</p>
+            <div class="social-links">
+                <p>Follow us on:</p>
+                <ul>
+                    <li><a href="https://x.com/LOGSWine" target="_blank" aria-label="Follow us on X"><i class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://facebook.com/LOGSWine" target="_blank" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://youtube.com/@LOGSWine" target="_blank" aria-label="Follow us on YouTube"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com/logs_wineofficial/" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="btn btn-primary rounded-circle shadow" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+
+    <!-- Back to Top JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+                btn.style.visibility = window.scrollY > 300 ? 'visible' : 'hidden';
+            });
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <!-- Hover reveal effect -->
+    <script>
+        document.querySelectorAll('.wine-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.wine-details').classList.remove('opacity-0', 'translateY-20');
+                card.querySelector('.wine-details').classList.add('opacity-100', 'translateY-0');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.wine-details').classList.add('opacity-0', 'translateY-20');
+                card.querySelector('.wine-details').classList.remove('opacity-100', 'translateY-0');
+            });
+        });
+    </script>
+
+</body>
+</html>
